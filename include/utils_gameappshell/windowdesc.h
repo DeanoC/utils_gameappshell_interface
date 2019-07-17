@@ -23,6 +23,7 @@ typedef struct GameAppShell_WindowDesc {
 } GameAppShell_WindowDesc;
 
 AL2O3_EXTERN_C void GameAppShell_WindowGetCurrentDesc(GameAppShell_WindowDesc* desc);
+// HWND or NSWindow* or similar
 AL2O3_EXTERN_C void* GameAppShell_GetPlatformWindowPtr();
 
 #endif //UTILS_GAMEAPPSHELL_WINDOW_H

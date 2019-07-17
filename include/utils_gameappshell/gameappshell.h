@@ -14,6 +14,10 @@ typedef void (*GameAppShell_DisplayUnloadFunc)();
 typedef void (*GameAppShell_ExitFunc)();
 typedef void (*GameAppShell_AbortFunc)();
 
+// allow the app to respond to platform specific message
+// on Windows MSG* from the windows loop
+typedef void (*GameAppShell_PlatformProcessMsg)(void* msg);
+
 // the shell will call these function if not null at various times
 // in the lifetime of the app
 typedef struct GameAppShell_Shell {
@@ -27,11 +31,13 @@ typedef struct GameAppShell_Shell {
 	GameAppShell_PerFrameUpdateFunc perFrameUpdateCallback;
 	GameAppShell_PerFrameDrawFunc perFrameDrawCallback;
 
+	GameAppShell_PlatformProcessMsg onMsgCallback;
+
 	GameAppShell_WindowDesc initialWindowDesc;
 } GameAppShell_Shell;
 
 
-// call GameAppShell_Init() from mainand fill in any callbacks you want to recieve
+// call GameAppShell_Init() from main and fill in any callbacks you want to recieve
 // then call MainLoop and callbacks will occur, MainLoop will return when the app
 // should exit
 AL2O3_EXTERN_C GameAppShell_Shell *GameAppShell_Init();

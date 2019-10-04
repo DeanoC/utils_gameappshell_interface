@@ -38,10 +38,10 @@ typedef struct GameAppShell_Shell {
 
 
 // call GameAppShell_Init() from main and fill in any callbacks you want to recieve
-// then call MainLoop and callbacks will occur, MainLoop will return when the app
-// should exit
+// then call MainLoop and callbacks will occur, MainLoop will never return on some
+// platforms. Exit callback should be used to set return values etc.
 AL2O3_EXTERN_C GameAppShell_Shell *GameAppShell_Init();
-AL2O3_EXTERN_C int GameAppShell_MainLoop(int argc, char const *argv[]);
+AL2O3_EXTERN_C void GameAppShell_MainLoop(int argc, char const *argv[]);
 
 // if you want to quit the app
 AL2O3_EXTERN_C void GameAppShell_Quit();

@@ -20,8 +20,6 @@ typedef struct GameAppShell_WindowDesc {
   bool minimized;
   bool visible;
 
-  float dpiBackingScale[2];
-
 } GameAppShell_WindowDesc;
 
 AL2O3_EXTERN_C void GameAppShell_WindowGetCurrentDesc(GameAppShell_WindowDesc* desc);

@@ -9,8 +9,7 @@
 typedef void (*GameAppShell_PerFrameUpdateFunc)(double deltaMS);
 typedef void (*GameAppShell_PerFrameDrawFunc)(double deltaMS);
 typedef bool (*GameAppShell_InitFunc)();
-typedef bool (*GameAppShell_DisplayLoadFunc)();
-typedef void (*GameAppShell_DisplayUnloadFunc)();
+typedef bool (*GameAppShell_DisplayResizeFunc)();
 typedef void (*GameAppShell_ExitFunc)();
 typedef void (*GameAppShell_AbortFunc)();
 
@@ -23,8 +22,7 @@ typedef void (*GameAppShell_PlatformProcessMsg)(void* msg);
 typedef struct GameAppShell_Shell {
 
 	GameAppShell_InitFunc onInitCallback;
-	GameAppShell_DisplayLoadFunc onDisplayLoadCallback;
-	GameAppShell_DisplayUnloadFunc onDisplayUnloadCallback;
+	GameAppShell_DisplayResizeFunc onDisplayResizeCallback;
 	GameAppShell_ExitFunc onQuitCallback; 	// intended exit of app
 	GameAppShell_AbortFunc onAbortCallback; // emergency exit of app
 

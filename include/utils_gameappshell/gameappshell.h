@@ -9,7 +9,7 @@
 typedef void (*GameAppShell_PerFrameUpdateFunc)(double deltaMS);
 typedef void (*GameAppShell_PerFrameDrawFunc)(double deltaMS);
 typedef bool (*GameAppShell_InitFunc)();
-typedef bool (*GameAppShell_DisplayResizeFunc)();
+typedef void (*GameAppShell_DisplayResizeFunc)();
 typedef void (*GameAppShell_ExitFunc)();
 typedef void (*GameAppShell_AbortFunc)();
 
